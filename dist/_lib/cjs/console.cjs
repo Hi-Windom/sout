@@ -1,8 +1,10 @@
 /*!
-* sout v1.0.0
+* sout v1.0.1
 * https://github.com/Hi-Windom/sout
 * https://www.npmjs.com/package/sout
 */
+'use strict';
+
 function bad(m, head) {
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
@@ -190,4 +192,4 @@ function exSout() {
     return 0;
 }
 
-export { exSout as default };
+module.exports = exSout;

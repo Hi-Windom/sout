@@ -1,9 +1,9 @@
 {
   "name": "sout",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
-  "main": "out/_lib/cjs/index.cjs",
-  "module": "out/_lib/es/index.mjs",
+  "main": "dist/_lib/cjs/index.cjs",
+  "module": "dist/_lib/es/index.mjs",
   "scripts": {
     "test": "jest",
     "test-c": "jest --coverage",
@@ -12,17 +12,17 @@
   "keywords": [],
   "author": "Soltus",
   "license": "ISC",
-  "files": ["out/*"],
+  "files": ["dist/*"],
   "exports": {
     ".": {
-      "types": "./out/index.d.ts",
-      "require": "./out/_lib/cjs/index.cjs",
-      "import": "./out/_lib/es/index.mjs"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/_lib/cjs/index.cjs",
+      "import": "./dist/_lib/es/index.mjs"
     },
     "./console": {
-      "types": "./out/console/index.d.ts",
-      "require": "./out/_lib/cjs/console.cjs",
-      "import": "./out/_lib/es/console.mjs"
+      "types": "./dist/console/index.d.ts",
+      "require": "./dist/_lib/cjs/console.cjs",
+      "import": "./dist/_lib/es/console.mjs"
     }
   },
   "devDependencies": {

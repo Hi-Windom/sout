@@ -21,13 +21,13 @@ export default defineConfig({
   },
   output: [
     {
-      dir: "out",
+      dir: "dist",
       format: "es",
       entryFileNames: "_lib/[format]/[name].mjs",
       banner,
     },
     {
-      dir: "out",
+      dir: "dist",
       format: "cjs",
       entryFileNames: "_lib/[format]/[name].cjs",
       banner,

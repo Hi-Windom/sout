@@ -14,7 +14,7 @@
     "target": "ES2022",
     "jsx": "react-jsxdev",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "outDir": "./out/",
+    "outDir": "./dist/",
     "typeRoots": ["./node_modules/@types"],
     "types": ["jest"]
   },
