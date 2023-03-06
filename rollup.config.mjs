@@ -8,11 +8,6 @@ import json from "@rollup/plugin-json";
 import pkg from "./package.json" assert { type: "json" };
 
 const libName = pkg.name;
-const banner = `/*!
-* ${libName} v${pkg.version}
-* https://github.com/Hi-Windom/sout
-* https://www.npmjs.com/package/sout
-*/`;
 
 export default defineConfig({
   input: {
@@ -24,13 +19,11 @@ export default defineConfig({
       dir: "out",
       format: "es",
       entryFileNames: "_lib/[format]/[name].mjs",
-      banner,
     },
     {
       dir: "out",
       format: "cjs",
       entryFileNames: "_lib/[format]/[name].cjs",
-      banner,
     },
   ],
   external: [],
