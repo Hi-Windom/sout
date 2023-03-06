@@ -1,16 +1,18 @@
 {
   "name": "sout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "out/_lib/cjs/index.cjs",
+  "module": "out/_lib/es/index.mjs",
   "scripts": {
     "test": "jest",
     "test-c": "jest --coverage",
     "rollup": "rollup --config"
   },
   "keywords": [],
-  "author": "",
+  "author": "Soltus",
   "license": "ISC",
+  "files": ["out/*"],
   "exports": {
     ".": {
       "types": "./out/index.d.ts",
