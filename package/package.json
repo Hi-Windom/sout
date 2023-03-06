@@ -1,14 +1,9 @@
 {
   "name": "sout",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "_lib/cjs/index.cjs",
   "module": "_lib/es/index.mjs",
-  "scripts": {
-    "test": "jest",
-    "test-c": "jest --coverage",
-    "rollup": "node beforeBuild.cjs && rollup --config"
-  },
   "keywords": [],
   "author": "Soltus",
   "license": "ISC",
