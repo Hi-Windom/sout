@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": false,
+    "declaration": true,
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "target": "ES2022",
+    "jsx": "react-jsxdev",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "outDir": "./out/",
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["jest"]
+  },
+  "include": ["src"]
+}
