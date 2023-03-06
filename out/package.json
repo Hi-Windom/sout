@@ -1,6 +1,9 @@
 {
   "name": "sout",
+  "version": "1.0.4",
   "description": "",
+  "main": "_lib/cjs/index.cjs",
+  "module": "_lib/es/index.mjs",
   "scripts": {
     "test": "jest",
     "test-c": "jest --coverage",
@@ -9,13 +12,25 @@
   "keywords": [],
   "author": "Soltus",
   "license": "ISC",
+  "files": ["*"],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./_lib/cjs/index.cjs",
+      "import": "./_lib/es/index.mjs"
+    },
+    "./console": {
+      "types": "./console/index.d.ts",
+      "require": "./_lib/cjs/console.cjs",
+      "import": "./_lib/es/console.mjs"
+    }
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/jest": "^29.4.0",
-    "fs-extra": "^11.1.0",
     "jest": "^29.4.3",
     "rollup": "^3.18.0",
     "rome": "^11.0.0",
