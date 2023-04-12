@@ -1,6 +1,6 @@
 {
   "name": "sout",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "",
   "main": "_lib/cjs/index.cjs",
   "module": "_lib/es/index.mjs",

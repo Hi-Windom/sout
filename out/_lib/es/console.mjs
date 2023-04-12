@@ -1,4 +1,25 @@
+/*!
+* sofill v1.0.73
+* https://github.com/Hi-Windom/Sofill
+* https://www.npmjs.com/package/sofill
+*/
+function isAppMode(includeDocker = false) {
+    if (includeDocker)
+        return document.body.classList.contains("body--docker");
+    return navigator.userAgent.toLowerCase().startsWith("siyuan");
+}
+function isPhoneAppMode() {
+    return document.body.classList.contains("body--mobile") && isAppMode();
+}
+function isSillotPhoneAppMode() {
+    return document.body.classList.contains("branch--Sillot") && isPhoneAppMode();
+}
+
 function bad(m, head) {
+    if (isSillotPhoneAppMode()) {
+        console.log(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
         console.log("%c%s%c" + t, "padding: 2px 4px;background: #000;color: #fff;border-radius: 2px;font-size: 40px", head, "color:red;font-size: 40px", m);
@@ -9,6 +30,10 @@ function bad(m, head) {
 }
 
 function error(m, head) {
+    if (isSillotPhoneAppMode()) {
+        console.error(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
         console.error("%c%s%c" + t, "padding: 2px 4px;background: #000;color: #fff;border-radius: 2px;font-size: large", head, "font-size: large", m);
@@ -19,6 +44,10 @@ function error(m, head) {
 }
 
 function good(m, head) {
+    if (isSillotPhoneAppMode()) {
+        console.log(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
         console.log("%c%s%c" + t, "padding: 2px 4px;background: #000;color: #fff;border-radius: 2px;font-size: 18px", head, "color:yellow;font-size: 18px", m);
@@ -29,6 +58,10 @@ function good(m, head) {
 }
 
 function info(m, head) {
+    if (isSillotPhoneAppMode()) {
+        console.log(m);
+        return;
+    }
     if (!window.sout.debug)
         return;
     const t = typeof m === "string" ? "%s" : "%o";
@@ -43,11 +76,19 @@ function info(m, head) {
 function log(m) {
     if (!window.sout.debug)
         return;
+    if (isSillotPhoneAppMode()) {
+        console.log(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     console.log("%c" + t, "color:#858585;font-size: 12px", m);
 }
 
 function ops(m, head) {
+    if (isSillotPhoneAppMode()) {
+        console.warn(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
         console.warn("%c%s%c" + t, "padding: 2px 4px;background: #000;color: #fff;border-radius: 2px;font-size: 18px", head, "color:orangered;font-size: 18px", m);
@@ -58,6 +99,10 @@ function ops(m, head) {
 }
 
 function print(m, head) {
+    if (isSillotPhoneAppMode()) {
+        console.log(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
         console.log("%c%s%c" + t, "padding: 2px 4px;background: #000;color: #fff;border-radius: 2px;font-size: 32px", head, "color:#a8c8b8;font-size: 32px", m);
@@ -68,6 +113,10 @@ function print(m, head) {
 }
 
 function slog(m) {
+    if (isSillotPhoneAppMode()) {
+        console.log(m);
+        return;
+    }
     if (!window.sout.debug)
         return;
     const t = typeof m === "string" ? "%s" : "%o";
@@ -77,6 +126,10 @@ function slog(m) {
 function success(m, head) {
     if (!window.sout.debug)
         return;
+    if (isSillotPhoneAppMode()) {
+        console.log(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
         console.log("%c%s%c" + t, "padding: 2px 4px;background: #000;color: #fff;border-radius: 2px;font-size: 16px", head, "color:lime;font-size: 16px", m);
@@ -99,11 +152,19 @@ function table(m) {
 function tracker(m) {
     if (!window.sout.debug)
         return;
+    if (isSillotPhoneAppMode()) {
+        console.log(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     console.log("%c%s%c" + t, "padding: 2px 4px;margin: 2px;background: orange;color: white;border-radius: 2px;font-size: 16px", (new Error()).stack.split("\n")[2].trim().split(" ")[1], "padding: 2px 4px;color: #1BA1E2;font-size: 16px", m);
 }
 
 function unsure(m, head) {
+    if (isSillotPhoneAppMode()) {
+        console.warn(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
         console.warn("%c%s%c" + t, "padding: 2px 4px;background: #000;color: #fff;border-radius: 2px;font-size: 18px", head, "color:gold;font-size: 18px", m);
@@ -114,6 +175,10 @@ function unsure(m, head) {
 }
 
 function warn(m, head) {
+    if (isSillotPhoneAppMode()) {
+        console.warn(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
         console.warn("%c%s%c" + t, "padding: 2px 4px;background: #000;color: #fff;border-radius: 2px;font-size: 16px", head, "color:yellow;font-size: 16px", m);
@@ -124,6 +189,10 @@ function warn(m, head) {
 }
 
 function wink(m, head) {
+    if (isSillotPhoneAppMode()) {
+        console.log(m);
+        return;
+    }
     const t = typeof m === "string" ? "%s" : "%o";
     if (head) {
         console.log("%c%s%c" + t, "padding: 2px 4px;background: #000;color: #fff;border-radius: 2px;font-size: 22px", head, "color:red;font-size: 40px", m);

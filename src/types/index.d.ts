@@ -1,5 +1,6 @@
 interface Window {
   sout: ISout
+  vConsole: any
 }
 
 interface ISout {

@@ -1,4 +1,9 @@
+import {isSillotPhoneAppMode} from 'sofill/env'
 export default function unsure(m, head?) {
+  if (isSillotPhoneAppMode()) {
+    console.warn(m);
+    return
+  }
   const t = typeof m === "string" ? "%s" : "%o";
   if (head) {
     console.warn("%c%s%c" + t,

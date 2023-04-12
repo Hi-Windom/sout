@@ -4,7 +4,7 @@
   "scripts": {
     "test": "jest",
     "test-c": "jest --coverage",
-    "rollup": "node beforeBuild.cjs && rollup --config"
+    "build": "node beforeBuild.cjs && rollup --config"
   },
   "keywords": [],
   "author": "Soltus",
@@ -19,8 +19,17 @@
     "jest": "^29.4.3",
     "rollup": "^3.18.0",
     "rome": "^11.0.0",
+    "sofill": "^1.0.73",
     "ts-jest": "^29.0.5",
     "tslib": "^2.5.0",
     "typescript": "^4.9.5"
-  }
+  },
+  "peerDependencies": {
+    "sofill": ">=1.0.73"
+  },
+  "peerDependenciesMeta": {
+     "sofill": {
+      "optional": false
+     }
+   }
 }

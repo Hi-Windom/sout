@@ -1,5 +1,10 @@
+import {isSillotPhoneAppMode} from 'sofill/env'
 export default function success(m, head?) {
   if (!window.sout.debug) return;
+  if (isSillotPhoneAppMode()) {
+    console.log(m);
+    return
+  }
   const t = typeof m === "string" ? "%s" : "%o";
   if (head) {
     console.log("%c%s%c" + t,
